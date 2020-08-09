@@ -134,7 +134,27 @@ is also a set of targets to manage the release process.
 
 You can read a brief description by running ``make`` on the command line::
 
-    make
+    Please use `make <target>' where <target> is one of:
+
+      clean           to clean everything
+      clean-dist      to clean the files and directories created by the dist target
+      clean-tests     to clean the directories created when running tox or pytest
+      clean-venv      to clean the virtualenv
+      clean-version   to revert the changes to files containing the version number
+
+      dist            to build the package
+      help            to show this list
+      messages        to run the makemessages and compilemessages management commands
+      migrations      to run makemigrations management command
+      runserver       to run the Django demo site
+      tests           to run the tests using pytest during development
+      test-upload     to upload a signed release to the PyPI test repository
+      upload          to upload a signed release to PyPI repository
+      venv            to create the virtualenv and install dependencies
+      version         to update the files containing the package version number
+                         you must set the VERSION on the command line, for example
+                         make version VERSION=1.2.3
+
 
 
 Similar to
