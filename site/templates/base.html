@@ -1,0 +1,41 @@
+{# A basic site template for development #}
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>
+    {% block head_title %}{% endblock %}
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/lynx.css' %}">
+</head>
+
+<body>
+  {% block nav %}
+    <nav>
+      <ul>
+        <li>
+          <a href="{% url "admin:index" %}">Admin</a>
+        </li>
+        <li>
+          <a href="{% url "lynx_news:news-list" %}">News</a>
+        </li>
+        <li>
+          <a href="{% url "lynx_news:news-add" %}">Add News</a>
+        </li>
+      </ul>
+    </nav>
+  {% endblock %}
+
+  {% block content %}{% endblock %}
+
+  {# Global javascript #}
+
+  {% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+  {% endblock %}
+</body>
+</html>
+

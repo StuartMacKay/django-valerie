@@ -1,0 +1,14 @@
+# Manifest used for source and binary distributions.
+
+# Only need to explicitly include the changelog. The readme, licence
+# and manifest files all pet pulled in automatically or from the
+# settings in setup.cfg
+
+include CHANGELOG.md
+
+graft src
+
+recursive-exclude * .cache
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * tests
